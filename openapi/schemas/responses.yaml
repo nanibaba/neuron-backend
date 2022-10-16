@@ -1,0 +1,64 @@
+successful_get:
+  description: Successfully obtained entity
+  content: 
+    application/json: 
+      schema: 
+        type: object
+        properties: 
+          message: 
+            type: string 
+            example: Successfully obtained entity
+          status: 
+            type: integer
+            example: 200
+        required: 
+          - message
+          - status
+successful_post:
+  description: Successfully created entity
+  content: 
+    application/json: 
+      schema: 
+        type: object
+        properties: 
+          message: 
+            type: string 
+            example: Successfully created entity
+          status: 
+            type: integer
+            example: 200
+        required: 
+          - message
+          - status
+validation_error:
+  description: Invalid payload
+  content: 
+    application/json: 
+      schema: 
+        type: object
+        properties: 
+          message: 
+            type: string 
+            example: Missing required field
+          status: 
+            type: integer
+            example: 400
+        required: 
+          - message
+          - status
+unauthorized:
+  description: Unauthorized to access entity
+  content: 
+    application/json: 
+      schema: 
+        type: object
+        properties: 
+          message: 
+            type: string 
+            example: Unauthorized to access entity
+          status: 
+            type: integer
+            example: 401
+        required: 
+          - message
+          - status

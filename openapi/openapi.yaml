@@ -1,0 +1,81 @@
+openapi: 3.0.3
+info:
+  version: 1.0.0
+  title: Neuron Backend
+  description: OpenAPI for Neuron Elevate Project
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Neuron
+    url: https://github.com/nanibaba/neuron-backend
+    email: support@neuron.com
+servers:
+  - url: /
+paths: 
+  /car-washes: 
+    get: 
+      tags:
+      - car-washes
+      summary: Get car washes
+      description: Get car washes
+      operationId: getCarWashes
+      responses: 
+        '200': 
+          $ref: '#/components/responses/successful_get'
+        '401': 
+          $ref: '#/components/responses/unauthorized'
+  
+  /order: 
+    post: 
+      tags:
+      - order
+      summary: Create order 
+      description: Create order
+      operationId: createOrder
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createOrder'
+      responses: 
+        '200': 
+          $ref: '#/components/responses/successful_post'
+        '400': 
+          $ref: '#/components/responses/validation_error'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+
+components:
+  schemas:
+    createOrder: 
+      type: object
+      properties: 
+        orderNo: 
+          type: string
+        status:
+          type: string 
+          enum: [pickedUp, washing, returned]
+        price: 
+          type: object
+          properties: 
+            currency: 
+              type: string
+            value:
+              type: number
+          required: 
+            - currency
+            - value
+      required: 
+        - orderNo
+        - status
+        - price
+
+  responses: 
+    successful_get:
+      $ref: 'schemas/responses.yaml#/successful_get'
+    successful_post:
+      $ref: 'schemas/responses.yaml#/successful_post'
+    validation_error:
+      $ref: 'schemas/responses.yaml#/validation_error'
+    unauthorized:
+      $ref: 'schemas/responses.yaml#/unauthorized'

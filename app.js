@@ -40,4 +40,4 @@ app.listen(port, () => {
   console.log(`http://${host}:${port}`)
 })
 
-module.exports = app;
+module.exports = app

@@ -39,3 +39,5 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
   console.log(`http://${host}:${port}`)
 })
+
+module.exports = app

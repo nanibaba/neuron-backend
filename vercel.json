@@ -11,6 +11,6 @@
         "dest": "app.js"
       }
     ],
-    "buildCommand": "sh vercel.sh",
+    "buildCommand": "bash vercel.sh",
     "installCommand": "yarn install --production"
   }

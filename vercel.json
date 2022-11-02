@@ -11,5 +11,5 @@
         "dest": "app.js"
       }
     ],
-    "installCommand": "yarn install --production"
+    "installCommand": "npm install"
   }

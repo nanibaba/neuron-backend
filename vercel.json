@@ -10,7 +10,5 @@
         "src": "/(.*)",
         "dest": "app.js"
       }
-    ],
-    "buildCommand": "sh vercel.sh",
-    "installCommand": "yarn install --production"
+    ]
   }
